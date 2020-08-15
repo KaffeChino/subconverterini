@@ -22,6 +22,15 @@ external-ui: dashboard
 
 # secret: ""
 
+tun:
+  enable: true
+  stack: system # or gvisor
+  dns-hijack:
+    - 8.8.8.8:53
+    - tcp://8.8.8.8:53
+  # macOS-auto-route: true # auto set global route
+  # macOS-auto-detect-interface: true # conflict with interface-name
+
 experimental:
   ignore-resolve-fail: true # 忽略 DNS 解析失败，默认值为 true
   # interface-name: en0 # outbound interface name
