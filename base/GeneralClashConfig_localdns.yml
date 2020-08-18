@@ -41,9 +41,11 @@ experimental:
 #  - "user1:pass1"
 #  - "user2:pass2"
 
-#hosts:
+hosts:
 #   '*.clash.dev': 127.0.0.1
 #   'alpha.clash.dev': '::1'
+    'rock.lastleafandme.co': 192.168.18.73
+    'ds.lastleafandme.co': 192.168.18.55
 
 dns:
   enable: true # 是否启用dns false
