@@ -60,11 +60,9 @@ experimental:
 # 实验性功能 hosts, 支持通配符 (例如 *.clash.dev 甚至 *.foo.*.example.com)
 # 静态的域名 比 通配域名 具有更高的优先级 (foo.example.com 优先于 *.example.com)
 # 注意: hosts 在 fake-ip 模式下不生效
-hosts:
+#hosts:
 #   '*.clash.dev': 127.0.0.1
 #   'alpha.clash.dev': '::1'
-  'rock.lastleafandme.co': 192.168.18.73
-  'ds.lastleafandme.co': 192.168.18.55
 
 dns:
   enable: true # 是否启用dns false
@@ -82,8 +80,7 @@ dns:
   #    - '*.lan'
   #    - localhost.ptlogin2.qq.com
   nameserver:
-     - tls://leaf.lastleafandme.co
-     - https://doh.lastleafandme.co/dns-query
+     - https://dns.adguard.com/dns-query
   # fallback:
   #    - 8.8.8.8 # 谷歌DNS
   #    - 1.1.1.1 # Cloudflare DNS
