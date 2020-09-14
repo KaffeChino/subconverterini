@@ -8,19 +8,19 @@ mode: Rule
 log-level: info
 ipv6: true
 external-controller: ':9090'
-external-ui: dashboard
+# external-ui: dashboard
 # secret: ""
 
-tun:
-  enable: true
-  stack: system # or gvisor
-  dns-hijack:
-    - 8.8.8.8:53
-    - tcp://8.8.8.8:53
-    - 114.114.114.114:53
-    - tcp://114.114.114.114:53
-  # macOS-auto-route: true # auto set global route
-  # macOS-auto-detect-interface: true # conflict with interface-name
+# tun:
+#   enable: true
+#   stack: system # or gvisor
+#   dns-hijack:
+#     - 8.8.8.8:53
+#     - tcp://8.8.8.8:53
+#     - 114.114.114.114:53
+#     - tcp://114.114.114.114:53
+#   macOS-auto-route: true # auto set global route
+#   macOS-auto-detect-interface: true # conflict with interface-name
 
 experimental:
   ignore-resolve-fail: true # 忽略 DNS 解析失败，默认值为 true
