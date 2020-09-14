@@ -21,5 +21,5 @@ wget -O Steam.list https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Rule
 wget -O Twitter.list https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Twitter.list
 python3 v2hosts_neofull.py
 python3 v2hosts_neobasic.py
-python3 v2hosts_ad-wars.py
+python3 v2hosts_adWars.py
 python3 v2hosts_adaway.py
