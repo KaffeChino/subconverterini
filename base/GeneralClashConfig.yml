@@ -52,14 +52,13 @@ dns:
     - https://doh.pub/dns-query
     - https://i.233py.com/dns-query
   fallback:
-    - tls://dns.google
     - https://doh.dns.sb/dns-query
     - https://dns.containerpi.com/dns-query
     - https://dns.adguard.com/dns-query
     #  - 1.1.1.1
     #  - tls://dns.rubyfish.cn:853
     #  - tls://1.0.0.1:853
-    - tls://dns.google:853
+    - tls://dns.google
     #  - https://dns.rubyfish.cn/dns-query
     #  - https://cloudflare-dns.com/dns-query
     #  - https://dns.google/dns-query
