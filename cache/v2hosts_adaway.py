@@ -31,4 +31,4 @@ except:
 with open('adaway.list', 'w') as file:
     file.write(out)
 
-print("flash succeed.")
+print("adaway flash succeed.")

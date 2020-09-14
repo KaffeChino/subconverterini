@@ -6,10 +6,10 @@ url = "https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts"
 s = requests.get(url).content.decode()
 if '127.0.0.1' not in s:
     print("Reflash not success. Read local hosts.")
-    with open('ad-wars.dat') as f:
+    with open('adWars.dat') as f:
         s = f.read()
 else:
-    with open('ad-wars.dat', 'w') as f:
+    with open('adWars.dat', 'w') as f:
         f.write(s)
 
 list = re.findall("127.0.0.1 \S*\n", s)
@@ -24,11 +24,11 @@ for s in list:
 #     out += file.read()
 
 try:
-    os.remove("ad-wars.list")
+    os.remove("adWars.list")
 except:
     pass
 
-with open('ad-wars.list', 'w') as file:
+with open('adWars.list', 'w') as file:
     file.write(out)
 
-print("flash succeed.")
+print("adWars flash succeed.")

@@ -31,4 +31,4 @@ except:
 with open('neoHostFull.list', 'w') as file:
     file.write("DOMAIN,"+out)
 
-print("flash succeed.")
+print("neoHostFull flash succeed.")

@@ -31,4 +31,4 @@ except:
 with open('neoHostBasic.list', 'w') as file:
     file.write(out)
 
-print("flash succeed.")
+print("neoHostBasic flash succeed.")
