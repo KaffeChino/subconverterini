@@ -52,7 +52,7 @@ dns:
   #   - 1.1.1.1
   #   - 223.5.5.5
   #   - 114.114.114.114
-  listen: :8053
+  listen: 0.0.0.0:8053
   enhanced-mode: redir-host # 模式：redir-host或fake-ip
   # fake-ip-range: 198.18.0.1/16 #
   # fake-ip-filter:
