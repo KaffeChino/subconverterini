@@ -1,26 +1,37 @@
 port: 7890
+
 socks-port: 7891
+
 redir-port: 7892
+
 mixed-port: 7893
+
 allow-lan: true
+
 # bind-address: "*"
+
 mode: Rule
+
 log-level: info
+
 ipv6: true
+
 external-controller: ":9090"
-# external-ui: dashboard
+
+external-ui: dashboard
+
 # secret: ""
 
-# tun:
-#   enable: true
-#   stack: system # or gvisor
-#   dns-hijack:
-#     - 8.8.8.8:53
-#     - tcp://8.8.8.8:53
-#     - 114.114.114.114:53
-#     - tcp://114.114.114.114:53
-#   macOS-auto-route: true # auto set global route
-#   macOS-auto-detect-interface: true # conflict with interface-name
+tun:
+  enable: true
+  stack: system # or gvisor
+  dns-hijack:
+    - 8.8.8.8:53
+    - tcp://8.8.8.8:53
+    - 114.114.114.114:53
+    - tcp://114.114.114.114:53
+  # macOS-auto-route: true # auto set global route
+  # macOS-auto-detect-interface: true # conflict with interface-name
 
 experimental:
   ignore-resolve-fail: true # 忽略 DNS 解析失败，默认值为 true
@@ -30,45 +41,54 @@ experimental:
 #  - "user1:pass1"
 #  - "user2:pass2"
 
-# hosts:
+hosts:
 #   '*.clash.dev': 127.0.0.1
 #   'alpha.clash.dev': '::1'
 
 dns:
-  enable: true # 是否启用dns false
+  enable: true # 是否启用dns false true
   ipv6: true
-  default-nameserver:
-    - 1.1.1.1
-    - 223.5.5.5
-    - 114.114.114.114
-  listen: :8053
-  enhanced-mode: fake-ip # 模式：redir-host或fake-ip
-  fake-ip-range: 198.18.0.1/16 #
-  fake-ip-filter:
-    - "*.lan"
-    - localhost.ptlogin2.qq.com
+  # default-nameserver:
+  #   - 1.1.1.1
+  #   - 223.5.5.5
+  #   - 114.114.114.114
+  listen: 0.0.0.0:8053
+  enhanced-mode: redir-host # 模式：redir-host或fake-ip
+  # fake-ip-range: 198.18.0.1/16 #
+  # fake-ip-filter:
+  #    - '*.lan'
+  #    - localhost.ptlogin2.qq.com
   nameserver:
-    - tls://dns.alidns.com
-    - https://doh.pub/dns-query
-    - https://i.233py.com/dns-query
+    - 127.0.0.1:5053
   fallback:
-    # - https://doh.dns.sb/dns-query
-    - https://dns.containerpi.com/dns-query
-    # - https://dns.adguard.com/dns-query
-    - 1.1.1.1
-    - tls://dns.rubyfish.cn:853
-    # - tls://1.0.0.1:853
-    - tls://dns.google
-    - tls://9.9.9.11
-    - tls://149.112.112.11
-    - https://dns11.quad9.net/dns-query
-    # - https://dns.rubyfish.cn/dns-query
-    # - https://cloudflare-dns.com/dns-query
-    # - https://dns.google/dns-query
-  # fallback-filter:
-  #   geoip: true
-  #   ipcidr:
-  #     - 240.0.0.0/4
+    #  - 192.168.18.73
+    - 192.168.18.55
+  #    - 8.8.8.8
+  #    - 1.1.1.1
+  #    - tls://dns.rubyfish.cn:853
+  #    - tls://1.0.0.1:853
+  #    - tls://dns.google:853
+  #    - https://dns.rubyfish.cn/dns-query
+  #    - https://cloudflare-dns.com/dns-query
+  #    - https://dns.google/dns-query
+  #fallback-filter:
+  #geoip: true
+  #ipcidr:
+  #- 240.0.0.0/4
+
+# Will be ignored after profile selection
+# Proxy:
+#   - name: Shadowsocks
+#     type: socks5
+#     server: 127.0.0.1
+#     port: 1080
+# Proxy Group:
+#   - name: Proxy
+#     type: select
+#     proxies:
+#       - Shadowsocks
+# Rule:
+#   - 'MATCH,DIRECT'
 
 cfw-latency-timeout: 3000
 cfw-latency-url: http://www.gstatic.com/generate_204
@@ -76,6 +96,31 @@ cfw-conn-break-strategy:
   proxy: chain # none/chain/all
   profile: true # true/false
   mode: false # true/false
+
+#cfw-tray-icon:
+#default: .\resources\static\imgs\logo_64.png
+#system-proxy-on: .\resources\static\imgs\custom.ic
+
+#cfw-child-process:
+#- command: "subconverter.exe"
+#args:
+#- "-cfw"
+#- "-f"
+#- "pref-acl4ssr.yml"
+#options:
+#cwd: subconverter
+#detached: true
+#shell: true
+#windowsHide:
+#- command: "unblockneteasemusic.exe"
+#args:
+#- "-p"
+#- "3333"
+#options:
+#cwd: unblockNeteaseMusic
+#detached: true
+#shell: true
+#windowsHide:
 
 cfw-bypass-bak:
   - qq.com
