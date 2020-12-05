@@ -744,26 +744,26 @@ upos-hz-mirrorakam.akamaized.net
 !*.us
 
 ; 国外域名关键字
-*1e100*
-*abema*
-*appledaily*
-*avtb*
-*beetalk*
-*blogspot*
-*dropbox*
-*facebook*
-*fbcdn*
-*github*
-*gmail*
-*google*
-*instagram*
-*porn*
-*sci-hub*
-*spotify*
-*telegram*
-*twitter*
-*whatsapp*
-*youtube*
+!*1e100*
+!*abema*
+!*appledaily*
+!*avtb*
+!*beetalk*
+!*blogspot*
+!*dropbox*
+!*facebook*
+!*fbcdn*
+!*github*
+!*gmail*
+!*google*
+!*instagram*
+!*porn*
+!*sci-hub*
+!*spotify*
+!*telegram*
+!*twitter*
+!*whatsapp*
+!*youtube*
 
 ; GFW list
 !*.030buy.com
@@ -6287,7 +6287,7 @@ upos-hz-mirrorakam.akamaized.net
 !*.amazonaws.com
 
 ; BBC
-*uk-live*
+!*uk-live*
 !*.bbc.co
 !*.bbc.com
 
@@ -6378,9 +6378,9 @@ upos-hz-mirrorakam.akamaized.net
 !*.nhncorp.jp
 
 ; OneDrive
-*1drv*
-*onedrive*
-*skydrive*
+!*1drv*
+!*onedrive*
+!*skydrive*
 !*.livefilestore.com
 !*.oneclient.sfx.ms
 !*.onedrive.com
@@ -6393,7 +6393,7 @@ upos-hz-mirrorakam.akamaized.net
 ;!*.aria.microsoft.com
 
 ; Porn
-*porn*
+!*porn*
 !*.8teenxxx.com
 !*.ahcdn.com
 !*.bcvcdn.com
@@ -6433,7 +6433,7 @@ upos-hz-mirrorakam.akamaized.net
 !*.twitch.tv
 !*.ttvnw.net
 !*.jtvnw.net
-*ttvnw*
+!*ttvnw*
 
 ; Twitter
 !*.t.co
