@@ -70,7 +70,7 @@ dns:
   # These nameservers are used to resolve the DNS nameserver hostnames below.
   # Specify IP addresses only
   default-nameserver:
-    - 1.1.1.1
+    - 211.138.21.66
     - 223.5.5.5
     - 114.114.114.114
   listen: 0.0.0.0:53
