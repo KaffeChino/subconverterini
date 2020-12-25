@@ -1,81 +1,109 @@
+#---------------------------------------------------#
+## 配置文件需要放置在 $HOME/.config/clash/config.yml
+## 或者运行目录下的config.yml
+#---------------------------------------------------#
+
+# HTTP 代理端口
 port: 7890
 
+# SOCKS5 代理端口
 socks-port: 7891
 
+# Linux 和 macOS 的 redir 代理端口 (如需使用此功能，请取消注释)
 redir-port: 7892
 
 mixed-port: 7893
 
+# 允许局域网的连接（可用来共享代理）
 allow-lan: true
 
+# 仅在将allow-lan设置为true时适用
+# #"*": 绑定所有IP地址
+# #192.168.122.11: 绑定单个IPv4地址
+# #"[aaaa::a8aa:ff:fe09:57d8]": 绑定单个IPv6地址
 # bind-address: "*"
 
+# 规则模式：Rule（规则） / Global（全局代理）/ Direct（全局直连）
 mode: Rule
 
+# 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
+# 5 个级别：silent / error / warning / info / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
 log-level: info
 
+# When set to false, resolver won't translate hostnames to IPv6 addresses
 ipv6: true
 
-external-controller: ":9090"
+# Clash 的 RESTful API
+external-controller: '0.0.0.0:9090'
 
-external-ui: dashboard
+# 您可以将静态网页资源（如 clash-dashboard）放置在一个目录中，clash 将会服务于 `RESTful API/ui`
+# 参数应填写配置目录的相对路径或绝对路径。
+# http://127.0.0.1:9090/ui/#/
+# external-ui: folder
+# yacd面板：  https://github.com/haishanh/yacd
+# Razord面板：http://clash.razord.top/#/proxies
+# external-ui: dashboard
 
+# RESTful API 的口令 (可选)
 # secret: ""
 
-tun:
-  enable: true
-  stack: system # or gvisor
-  dns-hijack:
-    - 8.8.8.8:53
-    - tcp://8.8.8.8:53
-    - 114.114.114.114:53
-    - tcp://114.114.114.114:53
-  # macOS-auto-route: true # auto set global route
-  # macOS-auto-detect-interface: true # conflict with interface-name
-
+# 实验性功能
 experimental:
   ignore-resolve-fail: true # 忽略 DNS 解析失败，默认值为 true
   # interface-name: en0 # outbound interface name
 
+# 本地 SOCKS5 / HTTP(S) 服务认证
 # authentication:
 #  - "user1:pass1"
 #  - "user2:pass2"
 
-hosts:
+# 实验性功能 hosts, 支持通配符 (例如 *.clash.dev 甚至 *.foo.*.example.com)
+# 静态的域名 比 通配域名 具有更高的优先级 (foo.example.com 优先于 *.example.com)
+# 注意: hosts 在 fake-ip 模式下不生效
+#hosts:
 #   '*.clash.dev': 127.0.0.1
 #   'alpha.clash.dev': '::1'
 
 dns:
-  enable: true # 是否启用dns false true
+  enable: true # 是否启用dns false
   ipv6: true
-  # default-nameserver:
-  #   - 1.1.1.1
-  #   - 223.5.5.5
-  #   - 114.114.114.114
-  listen: 0.0.0.0:8053
+  # These nameservers are used to resolve the DNS nameserver hostnames below.
+  # Specify IP addresses only
+  default-nameserver:
+    - 1.1.1.1
+    - 223.5.5.5
+    - 114.114.114.114
+  listen: 0.0.0.0:53
   enhanced-mode: redir-host # 模式：redir-host或fake-ip
   # fake-ip-range: 198.18.0.1/16 #
-  # fake-ip-filter:
+  # fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
   #    - '*.lan'
   #    - localhost.ptlogin2.qq.com
   nameserver:
-    - 127.0.0.1:5053
+     - 211.138.21.66
+     - 211.138.23.66
+     - 2409:8088::8
+     - 2409:8088::9
   fallback:
-    #  - 192.168.18.73
-    - 192.168.18.55
-  #    - 8.8.8.8
-  #    - 1.1.1.1
-  #    - tls://dns.rubyfish.cn:853
-  #    - tls://1.0.0.1:853
-  #    - tls://dns.google:853
-  #    - https://dns.rubyfish.cn/dns-query
-  #    - https://cloudflare-dns.com/dns-query
-  #    - https://dns.google/dns-query
+    #  - 8.8.8.8 # 谷歌DNS
+    #  - 1.1.1.1 # Cloudflare DNS
+     - tls://dns.rubyfish.cn:853
+    #  - tls://1.0.0.1:853
+     - tls://dns.google:853
+    #  - https://dns.rubyfish.cn/dns-query
+    #  - https://cloudflare-dns.com/dns-query
+    #  - https://dns.google/dns-query
+    - https://dns.containerpi.com/dns-query
+    - 208.67.222.222:5353
+    - 208.67.220.220:5353
   #fallback-filter:
-  #geoip: true
-  #ipcidr:
-  #- 240.0.0.0/4
+     #geoip: true # 默认
+     #ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
+       #- 240.0.0.0/4
 
+
+# 代理组
+# 下面这3个不要引到订阅里去 要不会出错
 # Will be ignored after profile selection
 # Proxy:
 #   - name: Shadowsocks
@@ -90,42 +118,61 @@ dns:
 # Rule:
 #   - 'MATCH,DIRECT'
 
+# Clash for Windows
+# Proxies module latency test settings
 cfw-latency-timeout: 3000
 cfw-latency-url: http://www.gstatic.com/generate_204
+
+# 打断连接
+# Identify strategy of breaking connections after switching to a new proxy/profile/mode
+# Options for proxy: none, chain(proxy group in connection chains), all
+# Options for profile: true, false
+# Options for mode: true, false
 cfw-conn-break-strategy:
   proxy: chain # none/chain/all
   profile: true # true/false
   mode: false # true/false
 
+# 定义状态栏图标
 #cfw-tray-icon:
-#default: .\resources\static\imgs\logo_64.png
-#system-proxy-on: .\resources\static\imgs\custom.ic
+#default: .\resources\static\imgs\logo_64.png        # 默认图标
+#system-proxy-on: .\resources\static\imgs\custom.ico   # 开启系统代理后图标
 
+# 子进程
+# Run child process after CFW started
+# Refer: https://docs.cfw.lbyczf.com/contents/childprocess.html
 #cfw-child-process:
-#- command: "subconverter.exe"
-#args:
-#- "-cfw"
-#- "-f"
-#- "pref-acl4ssr.yml"
-#options:
-#cwd: subconverter
-#detached: true
-#shell: true
-#windowsHide:
-#- command: "unblockneteasemusic.exe"
-#args:
-#- "-p"
-#- "3333"
-#options:
-#cwd: unblockNeteaseMusic
-#detached: true
-#shell: true
-#windowsHide:
+  # 启动订阅转换程序，端口号7893
+  #- command: "subconverter.exe" # run.cmd 程序名称 subconverter.exe -cfw >>logs/run.log 2>&1
+    #args:
+      #- "-cfw" # 运行参数1
+      #- "-f" # 运行参数2
+      #- "pref-acl4ssr.yml" # 运行参数3
+    #options:
+      #cwd: subconverter # 子进程工作目录
+      #detached: true # 子进程独立于其父进程运行
+      #shell: true # 则在 shell 中运行 command
+      #windowsHide: true # 隐藏子进程的控制台窗口
+  # 启动网易云，端口号3333
+  #- command: "unblockneteasemusic.exe" # 启动网易云
+    #args:
+      #- "-p" # 运行参数1
+      #- "3333" # 运行参数2
+    #options:
+      #cwd: unblockNeteaseMusic # 子进程工作目录
+      #detached: true # 子进程独立于其父进程运行
+      #shell: true # 则在 shell 中运行 command
+      #windowsHide: true # 隐藏子进程的控制台窗口
 
+# 系统代理跳过列表 cfw-bypass
+# System proxy will ignore these domains(or ipnet)
+# 系统代理跳过列表-备份的，不起作用，
+# 使用时可以将cfw-bypass-bak与cfw-bypass内容互换
 cfw-bypass-bak:
+  # 原有字段不用删除
   - qq.com
-  - "music.163.com"
-  - "*.music.126.net"
+  - 'music.163.com' # 网易云域名1
+  - '*.music.126.net' # 网易云域名2
   - localhost
   - 127.*
   - 10.*
@@ -147,6 +194,7 @@ cfw-bypass-bak:
   - 172.31.*
   - 192.168.*
   - <local>
+# 系统代理跳过列表 起作用的
 cfw-bypass:
   # 直连列表
   # MyList
