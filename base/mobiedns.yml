@@ -82,8 +82,8 @@ dns:
   nameserver:
      - 211.138.21.66
      - 211.138.23.66
-     - 2409:8088::8
-     - 2409:8088::9
+    #  - 2409:8088::8
+    #  - 2409:8088::9
   fallback:
     #  - 8.8.8.8 # 谷歌DNS
     #  - 1.1.1.1 # Cloudflare DNS
@@ -93,13 +93,13 @@ dns:
     #  - https://dns.rubyfish.cn/dns-query
     #  - https://cloudflare-dns.com/dns-query
     #  - https://dns.google/dns-query
-     - https://dns.containerpi.com/dns-query
+     - tls://dns.containerpi.com/dns-query
      - 208.67.222.222:5353
      - 208.67.220.220:5353
-  fallback-filter:
-     geoip: true # 默认
-     ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
-       - 240.0.0.0/4
+  # fallback-filter:
+     # geoip: true # 默认
+     # ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
+       # - 240.0.0.0/4
 
 
 # 代理组
