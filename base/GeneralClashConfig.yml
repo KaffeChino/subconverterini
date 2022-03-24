@@ -54,20 +54,20 @@ dns:
     # - https://i.233py.com/dns-query
   fallback:
     # - https://doh.dns.sb/dns-query
-    # - https://dns.containerpi.com/dns-query
+    - https://doh.opendns.com/dns-query
     - https://dns.adguard.com/dns-query
     - https://jp.tiar.app/dns-query
     # - tls://jp.tiar.app
-    - tls://1.1.1.1
-    - tls://dns.rubyfish.cn
+    - tls://1.0.0.1
+    # - tls://dns.rubyfish.cn
     # - tls://1.0.0.1:853
     - tls://dns.google
     # - tls://9.9.9.11
     # - tls://149.112.112.11
-    - 208.67.222.222:5353
+    # - 208.67.222.222:5353
     - 208.67.220.220:5353
     # - https://dns11.quad9.net/dns-query
-    # - https://dns.rubyfish.cn/dns-query
+    - https://i.233py.com/dns-query
     # - https://cloudflare-dns.com/dns-query
     # - https://dns.google/dns-query
   # fallback-filter:
