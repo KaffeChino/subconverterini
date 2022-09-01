@@ -8,6 +8,7 @@
 # 直连列表
 
 # MyList
+*.13th.tech
 *.423down.com
 *.bokecc.com
 *.chaipip.com
@@ -16,16 +17,21 @@
 *.kaikeba.com
 *.laomo.me
 *.mpyit.com
+*.msftconnecttest.com
+*.msftncsi.com
+*.qupu123.com
+*.pdfwifi.com
+*.zhenguanyu.biz
+*.zhenguanyu.com
 
-
-# CN域名直连
+# CN域名直连(中国|公司|网络)
 *.cn
-*.中国
-*.公司
-*.网络
+*.xn--fiqs8s
+*.xn--55qx5d
+*.xn--io0a7i
 
 # 中国国内常见域名关键词直连
-*-cn*
+*cn*
 *360buy*
 *alicdn*
 *alimama*
@@ -36,7 +42,6 @@
 *ccgslb*
 *chinacache*
 *duobao*
-*duolingo*
 *jdpay*
 *moke*
 *qhimg*
@@ -119,13 +124,18 @@
 *.acg.tv
 *.acgvideo.com
 *.b23.tv
+*.bigfun.cn
+*.bigfunapp.cn
 *.biliapi.com
 *.biliapi.net
+*.bilibili.com
 *.biligame.com
 *.biligame.net
 *.bilivideo.com
+*.bilivideo.cn
 *.hdslb.com
 *.im9.com
+*.smtcdns.net
 
 # Blizzard
 *.battle.net
@@ -133,13 +143,29 @@
 *.blizzard.com
 
 # ByteDance
+*.amemv.com
+*.bdxiguaimg.com
+*.bdxiguastatic.com
+*.byted-static.com
 *.bytedance.com
 *.bytedance.net
 *.bytedns.net
+*.bytednsdoc.com
+*.bytegoofy.com
 *.byteimg.com
+*.bytescm.com
+*.bytetos.com
+*.bytexservice.com
+*.douyin.com
+*.douyinpic.com
+*.douyinstatic.com
+*.douyinvod.com
+*.feelgood.cn
 *.feiliao.com
 *.gifshow.com
 *.huoshan.com
+*.huoshanzhibo.com
+*.ibytedapm.com
 *.iesdouyin.com
 *.ixigua.com
 *.kspkg.com
@@ -147,6 +173,7 @@
 *.snssdk.com
 *.toutiao.com
 *.toutiao13.com
+*.toutiaoapi.com
 *.toutiaocdn.com
 *.toutiaocdn.net
 *.toutiaocloud.com
@@ -155,6 +182,7 @@
 *.toutiaoimg.com
 *.toutiaopage.com
 *.wukong.com
+*.zijieapi.com
 *.zijieimg.com
 *.zjbyte.com
 *.zjcdn.com
@@ -281,10 +309,16 @@
 *.leju.com
 *.miaopai.com
 *.sina.com
+*.sina.com.cn
+*.sina.cn
 *.sinaapp.com
+*.sinaapp.cn
 *.sinaimg.com
+*.sinaimg.cn
 *.weibo.com
+*.weibo.cn
 *.weibocdn.com
+*.weibocdn.cn
 *.xiaoka.tv
 
 # Sohu Sogo
@@ -305,6 +339,23 @@
 *.playstationnetwork.com
 *.sony.com
 *.sonyentertainmentnetwork.com
+
+# SteamCN
+*.cm.steampowered.com
+*.steamcontent.com
+*.steamusercontent.com
+*.steamchina.com
+csgo.wmsj.cn
+dota2.wmsj.cn
+wmsjsteam.com
+dl.steam.clngaa.com
+dl.steam.ksyna.com
+st.dl.bscstorage.net
+st.dl.eccdnx.com
+st.dl.pinyuncloud.com
+steampipe.steamcontent.tnkjmec.com
+steampowered.com.8686c.com
+steamstatic.com.8686c.com
 
 # Tencent
 *.foxmail.com
@@ -365,9 +416,9 @@
 *.zmzfile.com
 
 # Private Tracker
-*announce*
-*torrent*
-*tracker*
+*.announce
+*.torrent
+*.tracker
 *.animebytes.tv
 *.animetorrents.me
 *.awesome-hd.me
@@ -404,9 +455,6 @@
 *.totheglory.im
 *.trontv.com
 
-# TeamViewer
-*.teamviewer.com
-
 # Public Direct CDN 公共直连
 #*.ajax.aspnetcdn.com
 #*.ajax.cloudflare.com
@@ -415,7 +463,6 @@
 *.baomitu.com
 *.bootcss.com
 *.jiasule.com
-*.jsdelivr.net
 *.staticfile.org
 *.upaiyun.com
 
@@ -535,13 +582,13 @@
 *.lancdns.com
 *.landiannews.com
 *.lanzou.com
+*.lanzoui.com
+*.lanzoux.com
 *.lemicp.com
 *.letitfly.me
-*.linkedin.com
 *.lizhi.fm
 *.lizhi.io
 *.lizhifm.com
-*.loli.net
 *.luoo.net
 *.lvmama.com
 *.lxdns.com
@@ -568,8 +615,6 @@
 *.oracle.com
 *.oschina.net
 *.ourdvs.com
-*.overcast.fm
-*.paypal.com
 *.polyv.net
 *.qbox.me
 *.qcloud.com
@@ -588,9 +633,7 @@
 *.quanmin.tv
 *.qunar.com
 *.qunarzz.com
-*.rarbg.to
 *.repaik.com
-*.rrmj.tv
 *.ruguoapp.com
 *.runoob.com
 *.sankuai.com
@@ -598,13 +641,13 @@
 *.sf-express.com
 *.shumilou.net
 *.simplecd.me
-*.sm.ms
 *.smzdm.com
 *.snwx.com
 *.soufunimg.com
 *.sspai.com
 *.startssl.com
 *.suning.com
+*.synology.com
 *.taihe.com
 *.th-sjy.com
 *.tianqi.com
@@ -663,10 +706,14 @@
 *.zhuihd.com
 
 # 内容：中国媒体列表
-# 更新：2021-04-03 20:26:54
-# 数量：41条
+# 更新：2021-12-26 21:01:13
+# 数量：45条
 
 # Bilibili 哔哩哔哩
+USER-AGENT,Bilibili*
+USER-AGENT,bili*
+USER-AGENT,bili-inter*
+apiintl.biliapi.net
 upos-hz-mirrorakam.akamaized.net
 *.acg.tv
 *.acgvideo.com
@@ -679,6 +726,7 @@ upos-hz-mirrorakam.akamaized.net
 *.bilibili.tv
 *.biligame.com
 *.biligame.net
+*.bilivideo.cn
 *.bilivideo.com
 *.hdslb.com
 *.im9.com
@@ -693,10 +741,14 @@ intl-subscription.iqiyi.com
 *.inter.ptqy.gitv.tv
 *.intl.iqiyi.com
 *.iq.com
+*iqiyi.com
 
 # Letv 乐视
-*.api.mob.app.letv.com
+api.mob.app.letv.com
 
 # TencentVideo 腾讯视频
 *.v.smtcdns.com
 *.vv.video.qq.com
+
+# Youku 优酷
+*.youku.com
