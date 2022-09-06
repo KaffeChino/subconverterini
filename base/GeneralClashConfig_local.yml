@@ -38,9 +38,7 @@ dns:
   enable: true # 是否启用dns false
   ipv6: true
   default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-    - 114.114.114.114
+    - 10.0.0.55
   listen: 0.0.0.0:8053
   enhanced-mode: fake-ip # 模式：redir-host或fake-ip
   fake-ip-range: 198.18.0.1/16 #
@@ -48,28 +46,9 @@ dns:
     - "*.lan"
     - localhost.ptlogin2.qq.com
   nameserver:
-    - tls://dns.alidns.com
-    - tls://dot.pub
-    - tls://dot.360.cn
-    # - https://i.233py.com/dns-query
+    - 10.0.0.55
   fallback:
-    # - https://doh.dns.sb/dns-query
-    # - https://doh.opendns.com/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://jp.tiar.app/dns-query
-    # - tls://jp.tiar.app
-    - tls://1.0.0.1
-    # - tls://dns.rubyfish.cn
-    # - tls://1.0.0.1:853
-    - tls://dns.google
-    # - tls://9.9.9.11
-    # - tls://149.112.112.11
-    - 208.67.222.222:5353
-    - 208.67.220.220:5353
-    # - https://dns11.quad9.net/dns-query
-    # - https://i.233py.com/dns-query
-    # - https://cloudflare-dns.com/dns-query
-    # - https://dns.google/dns-query
+    - 10.0.0.55:8053
   fallback-filter:
     geoip: true
     geoip-code: CN
